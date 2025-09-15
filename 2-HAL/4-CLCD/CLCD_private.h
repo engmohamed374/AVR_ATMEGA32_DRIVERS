@@ -1,0 +1,61 @@
+/********************************************************************/
+/********************************************************************/
+/*******************	Author: Mohamed Eid		*********************/
+/*******************	Layer:	HAL			 	*********************/
+/*******************	SWC:	CLCD			*********************/
+/*******************	Version:1.00			*********************/
+/********************************************************************/
+/********************************************************************/
+
+#ifndef CLCD_PRIVATE_H_
+#define CLCD_PRIVATE_H_
+
+/*Initialization macros bits*/
+#define CLCD_DL_8_BIT				1
+#define CLCD_DL_4_BIT				0
+#define CLCD_N_2_LINE				1
+#define CLCD_N_1_LINE				0
+#define CLCD_F_2_5x10				1
+#define CLCD_F_2_5x7				0
+#define CLCD_D_ON					1
+#define CLCD_D_OFF					0
+#define CLCD_C_ON					1
+#define CLCD_C_OFF					0
+#define CLCD_B_ON					1
+#define CLCD_B_OFF					0
+
+/*Concatenation macro*/
+#define CONC(b7, b6, b5, b4, b3, b2, b1, b0)			CONC_HELPER(b7, b6, b5, b4, b3, b2, b1, b0)
+#define CONC_HELPER(b7, b6, b5, b4, b3, b2, b1, b0)		0b##b7##b6##b5##b4##b3##b2##b1##b0
+
+/*Array of Hamoksha*/
+#define CLCD_u8arrHAMOKSHA			{0b00001110, 0b00001010, 0b00001110, 0b00000100, 0b00011111, 0b00000100, 0b00001010, 0b00010001}
+
+/*Dancing patterns*/
+#define CLCD_u8arrRAISE_RIGHT_LEG	{0b00001110, 0b00001010, 0b00001110, 0b00000100, 0b00011111, 0b00000100, 0b00000111, 0b00000100}
+#define CLCD_u8arrRAISE_LEFT_LEG	{0b00001110, 0b00001010, 0b00001110, 0b00000100, 0b00011111, 0b00000100, 0b00011100, 0b00000100}
+#define CLCD_u8arrRAISE_RIGHT_HAND	{0b00001110, 0b00001010, 0b00001110, 0b00000101, 0b00001110, 0b00010100, 0b00001010, 0b00010001}
+#define CLCD_u8arrRAISE_LEFT_HAND	{0b00001110, 0b00001010, 0b00001110, 0b00010100, 0b00001110, 0b00000101, 0b00001010, 0b00010001}
+#define CLCD_u8arrRAISE_BOTH_HANDS	{0b00001110, 0b00001010, 0b00001110, 0b00010101, 0b00001110, 0b00000100, 0b00001010, 0b00010001}
+#define CLCD_u8arrDOWN_BOTH_HANDS	{0b00001110, 0b00001010, 0b00001110, 0b00000100, 0b00001110, 0b00010101, 0b00001010, 0b00010001}
+
+/*Running patterns*/
+#define CLCD_u8arrRUNNING_FRAME_1	{0b00001100, 0b00001100, 0b00001100, 0b00000100, 0b00011110, 0b00000101, 0b00000110, 0b00000101}
+#define CLCD_u8arrRUNNING_FRAME_2	{0b00001100, 0b00001100, 0b00001100, 0b00000100, 0b00000100, 0b00000100, 0b00001010, 0b00010001}
+#define CLCD_u8arrRUNNING_FRAME_3	{0b00001100, 0b00001100, 0b00001100, 0b00000100, 0b00011110, 0b00000101, 0b00001100, 0b00010100}
+
+/*Piston pattern*/
+#define CLCD_u8arrPISTON			{0b00000000, 0b00000000, 0b00011111, 0b00011100, 0b00011000, 0b00011000, 0b00000000, 0b00000000}
+
+/*Vanishing pattern*/
+#define CLCD_u8arrVANISSHING		{0b00010101, 0b00000000, 0b00001010, 0b00000000,  0b00010101, 0b00000000, 0b00001010, 0b0000000}
+
+/*Bullet*/
+#define  CLCD_u8arrBULLET_1ST_PIXEL	{0b00000000, 0b00000000, 0b00010000, 0b00000000, 0b00000000, 0b00000000, 0b00000000, 0b00000000}
+#define  CLCD_u8arrBULLET_2ND_PIXEL	{0b00000000, 0b00000000, 0b00001000, 0b00000000, 0b00000000, 0b00000000, 0b00000000, 0b00000000}
+#define  CLCD_u8arrBULLET_3RD_PIXEL	{0b00000000, 0b00000000, 0b00000100, 0b00000000, 0b00000000, 0b00000000, 0b00000000, 0b00000000}
+#define  CLCD_u8arrBULLET_4TH_PIXEL	{0b00000000, 0b00000000, 0b00000010, 0b00000000, 0b00000000, 0b00000000, 0b00000000, 0b00000000}
+#define  CLCD_u8arrBULLET_5TH_PIXEL	{0b00000000, 0b00000000, 0b00000001, 0b00000000, 0b00000000, 0b00000000, 0b00000000, 0b00000000}
+#define  CLCD_u8arrBULLET_6TH_PIXEL	{0b00000000, 0b00000000, 0b00000000, 0b00000000, 0b00000000, 0b00000000, 0b00000000, 0b00000000}
+
+#endif
